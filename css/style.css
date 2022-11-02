@@ -13,8 +13,8 @@
     text-transform: capitalize;
 }
 .fh1{
-    font-size: 3.5rem;
-    line-height: 3.625;
+    font-size: 4rem;
+    line-height: 1.1;
 }
 
 .fh2{
@@ -37,14 +37,14 @@
     font-size: 1.125rem;
     line-height: 1.5;
 }
-.f-overliine{
+.f-overline{
     font-size: .875rem;
     line-height: 1.187;
+    letter-spacing: 4px;
 }
 .f-sub{
     font-size: .8125rem;
     line-height: 1.187;
-    line-height: 1.5625;
 }
 .fb{
     font-size: .937rem;
@@ -55,6 +55,7 @@
 .mainBtn{
     background-color: var(--mainColor);
     border:1px solid var(--mainColor);
+    font-size: .8125rem;
     color:#fff;
 }
 
@@ -64,6 +65,7 @@
 }
 
 .secondaryBtn{
+    font-size: .8125rem;
     background-color: #fff;
     border:1px solid #000;
     color:#000;
@@ -107,7 +109,16 @@
 
 .Home{
     height: 100vh;
+    background-image: url('../assets/home/mobile/image-header.jpg');
+    background-size: cover;
 }
+
+.homeCaption{
+    text-align: center;
+    width:80%;
+    margin:0 auto;
+}
+
 @media screen and (min-width:768px){
     .parent,nav{
         width:80%;
@@ -119,6 +130,9 @@
         position: fixed;
         right:10%;
     }
+    .Home{
+        background-image: url('../assets/home/tablet/image-header.jpg');
+    }
 }
 
 @media screen and (min-width:992px){
@@ -127,5 +141,14 @@
     }
     .cartIcon{
         position: unset;
+    }
+    .Home{
+        background-image: url('../assets/home/desktop/image-hero.jpg');
+    }
+
+    .homeCaption{
+        text-align: left;
+        width:50%;
+        margin:0;
     }
 }
