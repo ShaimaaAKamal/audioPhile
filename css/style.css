@@ -1,0 +1,52 @@
+:root{
+    --mainColor:#D87D4A;
+    --lightMain:#fbaf85;
+    --secondaryColor:#101010;
+    --darkGray:#F1F1F1;
+    --lightGray:#FAFAFA;
+}
+
+
+.fh1,.fh2,.fh3,.fh4,.fh5,.fh6,.f-sub{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.fh1{
+    font-size: 3.5rem;
+    line-height: 3.625;
+}
+
+.fh2{
+    font-size: 2.5rem;
+    line-height: 2.75;
+}
+.fh3{
+    font-size: 2rem;
+    line-height: 2.25;
+}
+.fh4{
+    font-size: 1.75rem;
+    line-height: 2.375;
+}
+.fh5{
+    font-size: 15rem;
+    line-height: 2.06;
+}
+.fh6{
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+.f-overliine{
+    font-size: .875rem;
+    line-height: 1.187;
+}
+.f-sub{
+    font-size: .8125rem;
+    line-height: 1.187;
+    line-height: 1.5625;
+}
+.fb{
+    font-size: .937rem;
+    line-height: 1.5625;
+    font-weight: 600;
+}
