@@ -99,7 +99,11 @@
 .logo{
     width:68%;
 }
-
+.cartIcon{
+    position: fixed;
+    right:2.5%;
+    top:1.6rem;
+}
 @media screen and (min-width:768px){
     .parent{
         width:80%;
@@ -107,10 +111,17 @@
     .logo{
         width:auto;
     }
+    .cartIcon{
+        position: fixed;
+        right:10%;
+    }
 }
 
 @media screen and (min-width:992px){
     .parent{
         width:80%;
+    }
+    .cartIcon{
+        position: unset;
     }
 }
