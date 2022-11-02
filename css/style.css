@@ -4,6 +4,7 @@
     --secondaryColor:#101010;
     --darkGray:#F1F1F1;
     --lightGray:#FAFAFA;
+    --borderColor:#979797;
 }
 
 
@@ -53,7 +54,7 @@
 
 .mainBtn{
     background-color: var(--mainColor);
-    border:1px solid var(--mainColor)
+    border:1px solid var(--mainColor);
     color:#fff;
 }
 
@@ -77,4 +78,39 @@
 }
 .linkBtn:hover{
     color:var(--mainColor);
+}
+
+.borderBottom{
+   border-bottom:.5px solid var(--borderColor);
+}
+
+.parent{
+    width:95%;
+}
+.nav-link{
+    color:#fff;
+    text-transform: capitalize;
+}
+
+.navbar-nav .nav-link.active{
+    color:var(--mainColor);
+}
+
+.logo{
+    width:68%;
+}
+
+@media screen and (min-width:768px){
+    .parent{
+        width:80%;
+    }
+    .logo{
+        width:auto;
+    }
+}
+
+@media screen and (min-width:992px){
+    .parent{
+        width:80%;
+    }
 }
