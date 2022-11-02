@@ -50,3 +50,31 @@
     line-height: 1.5625;
     font-weight: 600;
 }
+
+.mainBtn{
+    background-color: var(--mainColor);
+    border:1px solid var(--mainColor)
+    color:#fff;
+}
+
+.mainBtn:hover{
+    background-color: var(--lightMain);
+    border-color: var(--lightMain);
+}
+
+.secondaryBtn{
+    background-color: #fff;
+    border:1px solid #000;
+    color:#000;
+}
+
+.secondaryBtn:hover{
+    background-color: #000;
+    color:#fff;
+}
+.linkBtn{
+    color:fff;
+}
+.linkBtn:hover{
+    color:var(--mainColor);
+}
