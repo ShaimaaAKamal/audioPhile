@@ -147,7 +147,7 @@
     color:var(--darkGray)
 }
 
-.zx9speaker{
+.zx9speaker .parent{
     background-image: url('../assets/home/desktop/pattern-circles.svg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -162,6 +162,13 @@
 }
 .imgSmall{
     display:inline-block
+}
+
+.zx7speaker .parent{
+    background-image: url('../assets/home/mobile/image-speaker-zx7.jpg');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 @media screen and (min-width:768px){
     .parent,nav{
@@ -184,6 +191,12 @@
     .imgMedium{
         display:inline-block
     }
+
+    .zx7speaker .parent{
+        background-image: url('../assets/home/tablet/image-speaker-zx7.jpg');
+        background-position: left top;
+    }
+
 }
 
 @media screen and (min-width:992px){
@@ -210,12 +223,22 @@
         display:inline-block
     }
 
-    .zx9speaker{
+    .zx9speaker .parent{
         background-position: left top;
     }
 
     .zx9speaker p {
-        width:60%;
+        width:85%;
+    }
+    .zx7speaker .parent{
+        background-image: url('../assets/home/desktop/image-speaker-zx7.jpg');
+        background-position: left top;
     }
 
+}
+
+@media screen and (min-width:1200px){
+    .zx9speaker p {
+        width:75%;
+    }
 }
