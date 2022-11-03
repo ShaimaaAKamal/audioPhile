@@ -79,6 +79,10 @@
     color:#fff;
 }
 
+.text-site{
+    color:var(--mainColor)
+}
+
 .bg-site{
     background-color: var(--mainColor);
 }
@@ -233,6 +237,10 @@
     .zx7speaker .parent{
         background-image: url('../assets/home/desktop/image-speaker-zx7.jpg');
         background-position: left top;
+    }
+
+    .beginPhoto{
+         order:3;
     }
 
 }
