@@ -115,7 +115,7 @@
     text-transform: capitalize;
 }
 
-.navbar-nav .nav-link.active{
+.navbar-nav .nav-link.active,.nav-link:hover{
     color:var(--mainColor);
 }
 
@@ -173,6 +173,10 @@
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.socials svg:hover path{
+    fill:var(--mainColor);
 }
 @media screen and (min-width:768px){
     .parent,nav{
@@ -241,6 +245,14 @@
 
     .beginPhoto{
          order:3;
+    }
+
+    .footerParag{
+        width:50%;
+    }
+
+    .socials{
+        order:-1;
     }
 
 }
