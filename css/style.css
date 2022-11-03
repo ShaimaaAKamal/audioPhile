@@ -134,6 +134,10 @@
     background-size: cover;
 }
 
+#HeadPhones{
+    height: 50vh;
+}
+
 .homeCaption{
     text-align: center;
     width:80%;
@@ -187,6 +191,12 @@
   position: absolute;
   top:-3rem;
 
+}
+
+.orderInfo{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
 }
 @media screen and (min-width:768px){
     .parent,nav{
@@ -253,7 +263,7 @@
         background-position: left top;
     }
 
-    .beginPhoto{
+    .beginPhoto,.OrderHead{
          order:3;
     }
 
@@ -263,6 +273,10 @@
 
     .socials{
         order:-1;
+    }
+
+    .orderInfo{
+        width:80%;
     }
 
 }
