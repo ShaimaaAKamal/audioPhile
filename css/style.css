@@ -78,6 +78,10 @@
     background-color: #000;
     color:#fff;
 }
+
+.bg-site{
+    background-color: var(--mainColor);
+}
 .linkBtn{
     color:#000;
     opacity: .5;
@@ -142,6 +146,23 @@
 .categoryImg span{
     color:var(--darkGray)
 }
+
+.speaker{
+    background-image: url('../assets/home/desktop/pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.speakerImage{
+    top:10px;
+}
+
+.imgMedium,.imgLarge{
+    display:none;
+}
+.imgSmall{
+    display:inline-block
+}
 @media screen and (min-width:768px){
     .parent,nav{
         width:80%;
@@ -155,6 +176,13 @@
     }
     .Home{
         background-image: url('../assets/home/tablet/image-header.jpg');
+    }
+
+    .imgLarge,.imgSmall{
+        display:none;
+    }
+    .imgMedium{
+        display:inline-block
     }
 }
 
@@ -174,5 +202,20 @@
         width:50%;
         margin:0;
     }
+
+    .imgMedium,.imgSmall{
+        display:none;
+    }
+    .imgLarge{
+        display:inline-block
+    }
+
+    .speaker{
+        background-position: left top;
+    }
+    /* .speakerImage{
+        background-image: url('../assets/home/desktop/image-speaker-zx9.png');
+        background-size: cover;
+    } */
 
 }
