@@ -178,6 +178,16 @@
 .socials svg:hover path{
     fill:var(--mainColor);
 }
+
+.footerBorder::before{
+  content:'';
+  width:100px;
+  height:4px;
+  background-color: var(--mainColor);
+  position: absolute;
+  top:-3rem;
+
+}
 @media screen and (min-width:768px){
     .parent,nav{
         width:80%;
