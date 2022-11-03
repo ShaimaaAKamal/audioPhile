@@ -90,6 +90,15 @@
    border-bottom:.5px solid var(--borderColor);
 }
 
+.bg-bk{
+    background-color:#1A1A1A;
+}
+
+.navSection{
+    z-index:9999;
+}
+
+
 .parent,nav{
     width:95%;
 }
