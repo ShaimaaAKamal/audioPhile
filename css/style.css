@@ -207,6 +207,34 @@
 #details{
     height: 22vh;
 }
+
+.cart{
+    position: fixed;
+    z-index:10000;
+}
+
+.w25{
+    width:60px;
+}
+
+.cartWidth{
+    width:350px;
+    margin:0 auto;
+    top:50px;
+}
+
+.form-control::placeholder{
+    font-size: 1rem;
+}
+.form-control{
+    padding-bottom: 13px;
+}
+
+.form-check{
+    border:1px solid #E1E1E1;
+    padding:.7rem 2.8rem;
+    border-radius: .5rem;
+}
 @media screen and (min-width:768px){
     .parent{
         width:80%;
@@ -232,6 +260,10 @@
     .zx7speaker .parent{
         background-image: url('../assets/home/tablet/image-speaker-zx7.jpg');
         background-position: left top;
+    }
+
+    .cartWidth{
+        margin:0 0 0 auto;
     }
 
 }
@@ -287,11 +319,13 @@
     .orderInfo{
         width:80%;
     }
-
+    
 }
 
 @media screen and (min-width:1200px){
     .zx9speaker p {
         width:75%;
     }
+
+    
 }
