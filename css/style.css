@@ -107,7 +107,7 @@
 }
 
 
-.parent,nav{
+.parent{
     width:95%;
 }
 .nav-link{
@@ -198,8 +198,15 @@
     margin-left:auto;
     margin-right:auto;
 }
+
+.updateQuantity:hover{
+    color:var(--mainColor) !important;
+}
+#details{
+    height: 22vh;
+}
 @media screen and (min-width:768px){
-    .parent,nav{
+    .parent{
         width:80%;
     }
     .logo{
@@ -228,7 +235,7 @@
 }
 
 @media screen and (min-width:992px){
-    .parent,nav{
+    .parent{
         width:80%;
     }
     .cartIcon{
