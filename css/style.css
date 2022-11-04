@@ -60,11 +60,13 @@
     font-size: .9rem;
     text-transform: capitalize;
     color:#fff;
+    text-decoration: none;
 }
 
 .mainBtn:hover{
     background-color: var(--lightMain);
     border-color: var(--lightMain);
+    color:#fff;
 }
 
 .secondaryBtn{
