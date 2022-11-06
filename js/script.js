@@ -4,9 +4,18 @@ const cartClass=new Cart();
 const general=new General();
 const addToCart=document.querySelector('.addToCart');
 const cartIcon=document.querySelector('.cartIcon');
+const cart=document.querySelector('.cart');
+
+cart.addEventListener('click',function(e){
+    const id=e.target.id
+    if(id !== 'minus' && id !== 'plus' && id !== 'check' && id !== 'remove' )
+        cart.classList.add('d-none');
+})
+
 cartIcon.addEventListener('click',function(e){
-   const cart= createCart();
-   document.body.prepend(cart);
+    cart.innerHTML='';
+    cart.classList.remove('d-none');
+    cart.appendChild(createCart());
 })
 addToCart.addEventListener('click',function(e){
     e.preventDefault();
@@ -53,7 +62,6 @@ function setAtt(element,attribues){
 
 function createCart(){
     const cartItems=(localStorage.getItem('cartItems'))?JSON.parse(localStorage.getItem('cartItems')):[];
-    const section=createElem('section',[{key:'class',value:"cart s bg-black w-100 bg-opacity-50 vh-100 p-5"}]);
     const cartDiv=createElem('div',[{key:'class',value:"bg-white p-4 cartWidth  rounded-2 position-relative"}]);
     if(cartItems.length === 0){
         const empty=createEmptyCart();
@@ -69,13 +77,7 @@ function createCart(){
        checkout.innerHTML=`CHECKOUT`;
        cartDiv.appendChild(checkout);
     }
-    section.appendChild(cartDiv);
-   section.addEventListener('click',function(e){
-         const id=e.target.id
-         if(id !== 'minus' && id !== 'plus' && id !== 'check' && id !== 'remove' )
-             section.classList.add('d-none');
-   })
-   return section;
+return cartDiv;
 }
 
 function createCartHeading(cartLength,empty=''){
@@ -87,6 +89,12 @@ function createCartHeading(cartLength,empty=''){
     const a=createElem('a',[{key:'class',value:"text-black-50 small"},{key:"href",value:"#"},,{key:'id',value:'remove'}]);
     a.innerHTML='Remove all'
     div.appendChild(a);
+    a.addEventListener('click',function(e){
+        e.preventDefault();
+        localStorage.setItem('cartItems',JSON.stringify([]));
+        cart.innerHTML=''
+        cart.appendChild(createCart());
+    })
    }
    return div;
 }
