@@ -13,8 +13,8 @@
 </head>
 
 <body>
-  <section class="cart d-none bg-black w-100 bg-opacity-50 vh-100 p-5"> 
-      <div class="bg-white p-4 cartWidth  rounded-2 position-relative">
+  <!-- <section class="cart d-none bg-black w-100 bg-opacity-50 vh-100 p-5"> 
+      <div class="bg-white p-4 cartWidth  rounded-2 position-relative" >
         <div class="d-flex justify-content-between mb-4 align-items-center">
           <h6 class="text-uppercase">Cart (3)</h6>
           <a href="#" class="text-black-50 small">Remove all</a>
@@ -61,7 +61,7 @@
      </div>
      <a class="py-2 px-4 border-0 mainBtn text-center w-100 d-inline-block text-decoration-none " href="checkout.html">CHECKOUT</a>       
       </div>
-  </section>
+  </section> -->
   <section class="navSection position-fixed w-100 bg-bk">
     <div class="parent mx-auto px-4">
       <nav class="navbar navbar-expand-lg borderBottom py-3 mx-auto">
@@ -120,16 +120,18 @@
         </div>
         <div class="col-lg-6 align-self-lg-center">
            <div class="text-black text-center text-lg-start orderInfo">
-                <h2 class=" fh2 lh-1 mb-4 text-uppercase">YX1 WIRELESS EARPHONES</h2>
+                <h2 class=" fh2 lh-1 mb-4 text-uppercase" id="productName">YX1 WIRELESS EARPHONES</h2>
                 <p class="fb  opacity-50 mb-4 fw-normal">
                   Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.
                 </p>
-                <h6>$ 599</h6>
+                <h6 id="price">$ 599</h6>
                 <div class="d-flex justify-content-center justify-content-lg-start mt-4">
                   <div class="bg-gray py-2 border-0  d-flex align-items-center me-3 text-black fb">
-                    <a class="opacity-50 px-4 text-decoration-none text-reset updateQuantity" href="#">-</a><span>1</span><a class="updateQuantity opacity-50 px-4 text-reset text-decoration-none" href="#">+</a>
+                    <a class="opacity-50 px-4 text-decoration-none text-reset updateQuantity" href="#" id="minus">-</a><span id="qty">1</span><a class="updateQuantity opacity-50 px-4 text-reset text-decoration-none" href="#" id="plus">+</a>
                   </div>   
                   <a class="py-2 px-4 border-0 mainBtn text-uppercase addToCart" href="#">Add to Cart</a>
+                  <img src="./assets/cart/image-yx1-earphones.jpg" alt="" class="d-none cartImage">
+                  <input type="hidden" class="cartName" value="YX1">
                 </div>
            </div>
         </div>
@@ -349,7 +351,7 @@
     </div>
  </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
+<script src="js/script.js" type="module"></script>
 </body>
 
 </html>

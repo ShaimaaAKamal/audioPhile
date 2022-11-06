@@ -72,16 +72,18 @@
         <div class="col-lg-6 align-self-lg-center">
            <div class="text-black text-center text-lg-start orderInfo">
                 <p class="f-overline  opacity-50 mb-4 text-site">NEW PRODUCT</p>
-                <h2 class=" fh2 lh-1 mb-4 text-uppercase">ZX9 SPEAKER</h2>
+                <h2 class=" fh2 lh-1 mb-4 text-uppercase" id="productName">ZX9 SPEAKER</h2>
                 <p class="fb  opacity-50 mb-4 fw-normal">
                   Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.
                 </p>
-                <h6>$ 4.500</h6>
+                <h6 id="price">$ 4.500</h6>
                 <div class="d-flex justify-content-center justify-content-lg-start mt-4">
                   <div class="bg-gray py-2 border-0  d-flex align-items-center me-3 text-black fb">
-                    <a class="opacity-50 px-4 text-decoration-none text-reset updateQuantity" href="#">-</a><span>1</span><a class="updateQuantity opacity-50 px-4 text-reset text-decoration-none" href="#">+</a>
+                    <a class="opacity-50 px-4 text-decoration-none text-reset updateQuantity" href="#" id="minus">-</a><span id="qty">1</span><a class="updateQuantity opacity-50 px-4 text-reset text-decoration-none" href="#" id="plus">+</a>
                   </div>   
-                  <button class="py-2 px-4 border-0 mainBtn text-uppercase">Add to Cart</button>
+                  <a class="py-2 px-4 border-0 mainBtn text-uppercase addToCart" href="#">Add to Cart</a>
+                  <img src="./assets/cart/image-zx9-speaker.jpg" alt="" class="d-none cartImage">
+                  <input type="hidden" class="cartName" value="ZX9">
                 </div>
            </div>
         </div>
@@ -305,7 +307,7 @@
     </div>
  </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
+<script src="js/script.js" type="module"></script>
 </body>
 
 </html>
