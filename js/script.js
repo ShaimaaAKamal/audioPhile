@@ -1,5 +1,7 @@
 import { Cart } from "./modules/cartModule.js";
+import { General } from "./modules/generalModule.js";
 const cartClass=new Cart();
+const general=new General();
 const addToCart=document.querySelector('.addToCart');
 const cartIcon=document.querySelector('.cartIcon');
 cartIcon.addEventListener('click',function(e){
@@ -32,22 +34,9 @@ const plus=document.querySelector('#plus');
 const minus=document.querySelector('#minus');
 const  qty=document.querySelector('#qty');
 
-plus.addEventListener('click',function(e){
-    e.preventDefault();
-    let  qtyNumber=Number(qty.innerHTML)
-    qty.innerHTML=qtyNumber+1;
-})
 
-minus.addEventListener('click',function(e){
-    e.preventDefault();
-    let  qtyNumber=Number(qty.innerHTML)
-    if(qtyNumber >=2)
-    qty.innerHTML=qtyNumber-1;
-    else{
-        minus.classList.add('disabled');
-    }
-     
-})
+plus.addEventListener('click',(e)=> general.increaseQuantity(e));
+minus.addEventListener('click',(e)=> general.decreaseQuantity(e))
 
 
 function createElem(element,attributes){
