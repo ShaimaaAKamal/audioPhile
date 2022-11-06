@@ -20,16 +20,19 @@ export class Cart{
      createCart(){
         const cartItems=(localStorage.getItem('cartItems'))?JSON.parse(localStorage.getItem('cartItems')):[];
         const cartDiv=this.createElem('div',[{key:'class',value:"bg-white p-4 cartWidth  rounded-2 position-relative"}]);
-        if(cartItems.length === 0){
+        const isEmpty=cartItems.filter(cartItem => cartItem !== '')
+        if(isEmpty.length === 0){
             const empty=this.createEmptyCart();
-            const cartHeading=this.createCartHeading(cartItems.length,'empty');
+            // const cartHeading=this.createCartHeading(cartItems.length,'empty');
+            const cartHeading=this.createCartHeading(0,'empty');
             cartDiv.appendChild(cartHeading);
             cartDiv.appendChild(empty);        
         }else{
-            const cartHeading=this.createCartHeading(cartItems.length);
+            // const cartHeading=this.createCartHeading(cartItems.length);
+            const cartHeading=this.createCartHeading(isEmpty.length);
             cartDiv.appendChild(cartHeading);
             cartItems.forEach(cartItem => 
-               cartDiv.appendChild(this.createCartItem(cartItem,cartItems)))
+             (cartItem)? cartDiv.appendChild(this.createCartItem(cartItem,cartItems)):'')
            const checkout=this.createElem('a',[{key:'class',value:"py-2 px-4 border-0 mainBtn text-center w-100 d-inline-block text-decoration-none"},{key:'href',value:'checkout.html'},,{key:'id',value:'check'}]);
            checkout.innerHTML=`CHECKOUT`;
            cartDiv.appendChild(checkout);
@@ -75,10 +78,29 @@ export class Cart{
             div.appendChild(img);
             const info=this.createCartItemInfo(cartItem);
             div.appendChild(info);
-            const qty=this.createCartItemQty(cartItem,cartItems);
+            // const qty=this.createCartItemQty(cartItem,cartItems);
+            const options=this.cartOptions(cartItem,cartItems);
             parentDiv.appendChild(div);
-            parentDiv.appendChild(qty);
+            // parentDiv.appendChild(qty);
+            parentDiv.appendChild(options);
             return parentDiv;
+    }
+
+     cartOptions(cartItem,cartItems){
+        const div=this.createElem('div',[{key:'class',value:'d-flex align-items-center'}])
+        const deleteIcon =this.createElem('i',[{key:'class',value:"fa-solid fa-trash-can-arrow-up ms-2 text-site fs-4"},{key:'id',value:'delete'}]);
+        const qty=this.createCartItemQty(cartItem,cartItems);
+        div.appendChild(qty);
+        div.appendChild(deleteIcon);
+        self=this;
+        deleteIcon.addEventListener('click',function(){
+            cartItems.splice(cartItem.id,1,'');
+            localStorage.setItem('cartItems',JSON.stringify(cartItems));
+            cart.innerHTML='';
+            cart.appendChild(self.createCart());
+            cart.classList.remove('d-none');
+        })
+       return div;
     }
     
      createCartItemInfo(cartItem){
@@ -112,6 +134,9 @@ export class Cart{
             cartItems[cartItem.id].qty=span.innerHTML
             localStorage.setItem('cartItems',JSON.stringify(cartItems))
         });
+       
         return div;
     }   
 }
+
+

@@ -8,23 +8,19 @@ const cart=document.querySelector('.cart');
 
 cart.addEventListener('click',function(e){
     const id=e.target.id
-    if(id !== 'minus' && id !== 'plus' && id !== 'check' && id !== 'remove' )
+    if(id !== 'minus' && id !== 'plus' && id !== 'check' && id !== 'remove' && id !== 'delete' )
         cart.classList.add('d-none');
 })
 
-console.log(page);
 
 cartIcon.addEventListener('click',function(e){
-    console.log('shimaa');
     cart.innerHTML='';
     cart.classList.remove('d-none');
     cart.appendChild(cartClass.createCart());
 })
 
-console.log((page === 'product'));
 
 if(page === 'product'){
-    console.log('product')
     const addToCart=document.querySelector('.addToCart');
     addToCart.addEventListener('click',function(e){
         e.preventDefault();
@@ -59,3 +55,4 @@ if(page === 'product'){
 
 
 
+//adde delete to cart
