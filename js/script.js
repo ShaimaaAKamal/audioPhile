@@ -35,8 +35,8 @@ const minus=document.querySelector('#minus');
 const  qty=document.querySelector('#qty');
 
 
-plus.addEventListener('click',(e)=> general.increaseQuantity(e));
-minus.addEventListener('click',(e)=> general.decreaseQuantity(e))
+plus.addEventListener('click',(e)=> general.increaseQuantity(e,qty));
+minus.addEventListener('click',(e)=> general.decreaseQuantity(e,qty));
 
 
 function createElem(element,attributes){
@@ -59,7 +59,7 @@ function createCart(){
     section.appendChild(cartDiv);
     cartDiv.appendChild(cartHeading);
     cartItems.forEach(cartItem => 
-       cartDiv.appendChild(createCartItem(cartItem)))
+       cartDiv.appendChild(createCartItem(cartItem,cartItems)))
    const checkout=createElem('a',[{key:'class',value:"py-2 px-4 border-0 mainBtn text-center w-100 d-inline-block text-decoration-none"},{key:'href',value:'checkout.html'},,{key:'id',value:'check'}]);
    checkout.innerHTML=`CHECKOUT`;
    cartDiv.appendChild(checkout);
@@ -82,14 +82,14 @@ function createCartHeading(cartLength){
    return div;
 }
 
-function createCartItem(cartItem){
+function createCartItem(cartItem,cartItems){
         const parentDiv=createElem('div',[{key:'class',value:"d-flex justify-content-between align-items-center mb-4"}]);
         const div=createElem('div',[{key:'class',value:'d-flex align-items-center'}]);
         const img=createElem('img',[{key:'class',value:"rounded-3 me-3 w25"},{key:'alt',value:'image'},{key:'src',value:cartItem.cartImage}]);
         div.appendChild(img);
         const info=createCartItemInfo(cartItem);
         div.appendChild(info);
-        const qty=createCartItemQty(cartItem);
+        const qty=createCartItemQty(cartItem,cartItems);
         parentDiv.appendChild(div);
         parentDiv.appendChild(qty);
         return parentDiv;
@@ -106,7 +106,7 @@ function createCartItemInfo(cartItem){
     return div;
 }
 
-function createCartItemQty(cartItem){
+function createCartItemQty(cartItem,cartItems){
     const div=createElem('div',[{key:'class',value:"bg-gray py-1 border-0  d-flex align-items-center  text-black small"}]);
     const minus=createElem('a',[{key:'class',value:"opacity-50 px-3 text-decoration-none text-reset updateQuantity"},{key:'href',value:'#'},{key:'id',value:'minus'}]);
     minus.innerHTML=`-`;
@@ -117,6 +117,15 @@ function createCartItemQty(cartItem){
     const plus=createElem('a',[{key:'class',value:"updateQuantity opacity-50 px-3 text-reset text-decoration-none"},{key:'href',value:'#'},{key:'id',value:'plus'}]);
     plus.innerHTML=`+`;
     div.appendChild(plus);
+    plus.addEventListener('click',(e)=> {
+        general.increaseQuantity(e,span);
+        cartItems[cartItem.id].qty=span.innerHTML
+        localStorage.setItem('cartItems',JSON.stringify(cartItems))
+    });
+    minus.addEventListener('click',(e)=> {general.decreaseQuantity(e,span);
+        cartItems[cartItem.id].qty=span.innerHTML
+        localStorage.setItem('cartItems',JSON.stringify(cartItems))
+    });
     return div;
 }
 
