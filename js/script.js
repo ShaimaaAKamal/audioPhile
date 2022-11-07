@@ -55,6 +55,14 @@ if(page === 'product'){
 if(page === 'checkout'){
    const check=new Checkout();
    check.inputsEventlistener();  
+   const cartItems=(localStorage.getItem('cartItems'))?JSON.parse(localStorage.getItem('cartItems')):[];
+   const summaryProducts=document.querySelector('#summaryProducts');
+   const displayedProducts=cartItems.filter(item => item!== '')
+   displayedProducts.forEach(product => {
+    summaryProducts.appendChild(check.createSummaryProduct(product));
+   });
+   console.log(summaryProducts);
+
 }
 
 
