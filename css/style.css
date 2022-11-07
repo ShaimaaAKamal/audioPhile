@@ -230,9 +230,16 @@
 .form-control::placeholder{
     font-size: 1rem;
 }
+
+.form-control:focus{
+    border-color: var(--mainColor);
+    box-shadow: unset;
+    caret-color: var(--mainColor);
+}
 .form-control{
     padding-bottom: 13px;
 }
+
 
 .form-check{
     border:1px solid #E1E1E1;
