@@ -21,7 +21,14 @@ export class Checkout{
         this.pinError=document.querySelector('#pinError');
         this.eMoneyNumberError=document.querySelector('#eMoneyNumberError');
         this.elemArray=[ this.email,this.phone,this.code,this.eMoneyPin,this.eMoneyNumber]
-        this.errorArray=[ this.emailError, this.phoneError,this.codeError,this.pinError,this.eMoneyNumberError]
+        this.errorArray=[ this.emailError, this.phoneError,this.codeError,this.pinError,this.eMoneyNumberError];
+        this.paymentMethods=document.getElementsByName('paymentMethod');
+        this.formcheck=document.querySelectorAll('.form-check');
+        this.cashInfo=document.querySelector('#cashInfo');
+        this.eMoneyInfo=document.querySelector('#eMoneyInfo');
+        console.log(this.cashInfo);
+        console.log( this.eMoneyInfo);
+
       }   
 
       inputsEventlistener(){
@@ -43,7 +50,24 @@ export class Checkout{
                 general.showEmptyInput(self.errorArray[index],element,'blur')}
                 })
         });
+         this.paymentMethods.forEach((element,index) =>{
+            const parentElement=element.parentNode;
+            parentElement.style.borderColor= (element.checked)?'#fbaf85':'#CED4DA';
+            element.addEventListener('change',function(e){
+                self.formcheck.forEach((formelement,key)=>{
+                    formelement.style.borderColor= (element.checked && key === index )?'#fbaf85':'#CED4DA';
+                }) 
+                if(element.id === 'cash' && element.checked){
+                    self.cashInfo.classList.remove('d-none');
+                    self.eMoneyInfo.classList.add('d-none');
+                }
+                else if(element.id === 'e-Money' && element.checked){
+                    self.cashInfo.classList.add('d-none');
+                    self.eMoneyInfo.classList.remove('d-none');
+                }
 
+            })
+         })
        }
     
        checkValidation(key,e){

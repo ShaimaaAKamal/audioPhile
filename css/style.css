@@ -238,15 +238,21 @@
 }
 
 .form-control{
-    padding-bottom: 13px;
+    padding-bottom: 6px;
     font-size: .9rem;
 }
 
 
 .form-check{
-    border:1px solid #E1E1E1;
+    border:1px solid #CED4DA;
     padding:.7rem 2.8rem;
     border-radius: .5rem;
+}
+
+.form-check-input:checked {
+    background-color: var(--mainColor);
+    border-color:var(--mainColor);
+    box-shadow: unset;
 }
 
 

@@ -24,7 +24,7 @@ export class General{
    showInvalidInput(errorElement,mainELement){
    errorElement.classList.remove('d-none');
    mainELement.style.borderColor='#DC3346';
-    mainELement.previousElementSibling.children[0].style.color='#DC3346';
+   mainELement.previousElementSibling.children[0].style.color='#DC3346';
    }
    showEmptyInput(errorElement,mainELement,event=''){
     errorElement.classList.add('d-none');
