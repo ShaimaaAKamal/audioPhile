@@ -17,7 +17,7 @@
 <body class="bg-gray">
   <section class="cart d-none bg-black w-100 bg-opacity-50 vh-100 p-5"> 
   </section>
-<section class="sucessOrder  w-100 vh-100 bg-black bg-opacity-50 position-fixed d-flex justify-content-center align-items-center">
+<section class="sucessOrder d-none  w-100 vh-100 bg-black bg-opacity-50 position-fixed d-flex justify-content-center align-items-center">
    <div class="bg-white p-5 rounded-3 d-flex flex-column successWidth">
     <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="mb-4">
       <g fill="none" fill-rule="evenodd"><circle fill="#D87D4A" cx="32" cy="32" r="32"/>
@@ -28,24 +28,14 @@
      <small class="text-black-50 my-2">You will receive an email confirmation shortly.</small>
      <div class="row gx-0 my-4">
       <div class="col-md-7">
-          <div class="bg-gray px-4 py-3 rounded-start">
-            <div class="d-flex justify-content-between borderBottom align-items-start mb-4">
-              <div class='d-flex align-items-center'>
-                 <img src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="image" class="rounded-3 me-3 w25">
-                 <div class="d-flex flex-column ">
-                      <span class=" fb text-black  mb-1">XX99 MK II</span>
-                      <span class="text-black-50 fw-semibold small">$ 2,900</span>
-                 </div>
-              </div>
-              <span class="text-black-50 mt-1">x1</span>
-           </div>
-           <p class="text-black-50 text-center small mb-0">and 2 other item(s)</p>
+          <div class="bg-gray px-4 py-3 rounded-start" id="successItem">
+           <p class="text-black-50 text-center small mb-0 pt-3 borderTop" id="others"></p>
           </div>
       </div>
       <div class="col-md-5">
         <div class="bg-black p-3  rounded-end h-100 d-flex flex-column justify-content-center align-items-center">
             <p class="text-white-50">GRAND TOTAL</p>
-            <h6 class="text-white fw-semibold">$ 5,446</h6>
+            <h6 class="text-white fw-semibold" id="successGrand"></h6>
         </div>
       </div>
      </div>
@@ -249,7 +239,7 @@
           <p class="text-black-50 mb-0 small">GRAND TOTAL</p>
           <h6 class="text-site" id="totalGrand">$ 5,446</h6>
           </div>
-       <a class="py-2 px-4 border-0 mainBtn text-center w-100 d-inline-block text-decoration-none " href="#">CONTINUE & PAY</a>       
+       <a class="py-2 px-4 border-0 mainBtn text-center w-100 d-inline-block text-decoration-none" href="#" id="pay">CONTINUE & PAY</a>       
         </div>
     </section>
      </div>

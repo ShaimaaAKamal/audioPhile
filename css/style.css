@@ -99,6 +99,9 @@
 .borderBottom{
    border-bottom:.5px solid var(--borderColor);
 }
+.borderTop{
+    border-top:.5px solid var(--borderColor);
+}
 
 .bg-bk{
     background-color:#1A1A1A;

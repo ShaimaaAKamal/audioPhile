@@ -53,31 +53,9 @@ if(page === 'product'){
 }
 
 if(page === 'checkout'){
-   const check=new Checkout();
+    const check=new Checkout();
    check.inputsEventlistener();  
-   const cartItems=(localStorage.getItem('cartItems'))?JSON.parse(localStorage.getItem('cartItems')):[];
-   const summaryProducts=document.querySelector('#summaryProducts');
-   const summaryCard=document.querySelector('#summaryCard');
-   const vat=document.querySelector('#vat');
-   const totalGrand=document.querySelector('#totalGrand');
-   let price=0;
-   const productsPrice = document.querySelector('#productsPrice')
-   const displayedProducts=cartItems.filter(item => item!== '')
-   if(displayedProducts.length !== 0){
-    displayedProducts.forEach(product => {
-        summaryProducts.appendChild(check.createSummaryProduct(product));
-        price+=Number(product.price.split(' ')[1]) * product.qty;
-       });
-       productsPrice.innerHTML=`$ ${price}`;
-       vat.innerHTML=`$ ${Math.round(.05*price)}`
-       totalGrand.innerHTML=`$ ${price+50+ (Math.round(.05*price))}`;
-       summaryCard.classList.remove('d-none');
-   }
-   else{
-    summaryCard.classList.add('d-none');
-
-   }
-  
+   check.displaySummary();
 }
 
 
@@ -85,4 +63,3 @@ if(page === 'checkout'){
 
 
 
-//adde delete to cart

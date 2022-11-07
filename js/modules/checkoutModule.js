@@ -104,6 +104,46 @@ export class Checkout{
         return parentDiv;
        }
 
-       
+       payHandle(e,displayedProducts,price){
+        e.preventDefault();
+        const sucessOrder=document.querySelector('.sucessOrder');
+        const successGrand=document.querySelector('#successGrand');
+        const successItem=document.querySelector('#successItem');
+        const others=document.querySelector('#others');
+        successItem.prepend(this.createSummaryProduct(displayedProducts[0]));
+        others.innerHTML=`and ${displayedProducts.length -1} other item(s)`;
+        sucessOrder.classList.remove('d-none')
+        successGrand.innerHTML=`$ ${price+50+ (Math.round(.05*price))}`;
+       }
+
+       displaySummary(){
+        const cartItems=(localStorage.getItem('cartItems'))?JSON.parse(localStorage.getItem('cartItems')):[];
+        const summaryProducts=document.querySelector('#summaryProducts');
+        const summaryCard=document.querySelector('#summaryCard');
+        const pay=document.querySelector('#pay');
+        const vat=document.querySelector('#vat');
+        const totalGrand=document.querySelector('#totalGrand');
+        const productsPrice = document.querySelector('#productsPrice')
+        const displayedProducts=cartItems.filter(item => item!== '')
+        let price=0;
+        if(displayedProducts.length !== 0){
+             displayedProducts.forEach(product => {
+             summaryProducts.appendChild(this.createSummaryProduct(product));
+             price+=Number(product.price.split(' ')[1]) * product.qty;
+            });
+            productsPrice.innerHTML=`$ ${price}`;
+            vat.innerHTML=`$ ${Math.round(.05*price)}`
+            totalGrand.innerHTML=`$ ${price+50+ (Math.round(.05*price))}`;
+            summaryCard.classList.remove('d-none');
+            pay.addEventListener('click',(e)=>this.payHandle(e,displayedProducts,price));
+            localStorage.setItem('cartItems',JSON.stringify([]))
+        }
+        else{
+         summaryCard.classList.add('d-none');
+     
+        }
+       }
+
+
 
 }
