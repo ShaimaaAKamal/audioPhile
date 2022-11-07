@@ -20,65 +20,50 @@ export class Checkout{
         this.codeError=document.querySelector('#codeError');
         this.pinError=document.querySelector('#pinError');
         this.eMoneyNumberError=document.querySelector('#eMoneyNumberError');
+        this.elemArray=[ this.email,this.phone,this.code,this.eMoneyPin,this.eMoneyNumber]
+        this.errorArray=[ this.emailError, this.phoneError,this.codeError,this.pinError,this.eMoneyNumberError]
       }   
 
       inputsEventlistener(){
         self=this;
-        this.email.addEventListener('keyup',function(e){
-            const email=e.target.value;
-           if(email !== ''){
-            (validate.validateMail(email))? general.showValidInput(self.emailError,self.email):general.showInvalidInput(self.emailError,self.email);
-           }else{general.showEmptyInput(self.emailError,self.email)}
-        });
-        this.email.addEventListener('blur',function(e){
-        const email=e.target.value;
-        if(email === ''){
-           general.showEmptyInput(self.emailError,self.email,'blur')}
-         });
-         this.phone.addEventListener('keyup',function(e){
-            const phone=e.target.value;
-        if(phone !== ''){
-            (validate.validatePhone(phone))? general.showValidInput(self.phoneError,self.phone):general.showInvalidInput(self.phoneError,self.phone);
-        }else{general.showEmptyInput(self.phoneError,self.phone)}
-         });
-        this.phone.addEventListener('blur',function(e){
-        const phone=e.target.value;
-        if(phone === ''){
-        general.showEmptyInput(self.phoneError,self.phone,'blur')}
-        })
-        this.code.addEventListener('keyup',function(e){
-            const code=e.target.value;
-        if(code !== ''){
-            (validate.validateCode(code))? general.showValidInput(self.codeError,self.code):general.showInvalidInput(self.codeError,self.code);
-        }else{general.showEmptyInput(self.codeError,self.code)}
-         });
-        this.code.addEventListener('blur',function(e){
-        const code=e.target.value;
-        if(code === ''){
-        general.showEmptyInput(self.codeError,self.code,'blur')}
-        })
-        this.eMoneyPin.addEventListener('keyup',function(e){
-            const pin=e.target.value;
-        if(pin !== ''){
-            (validate.validatePIN(pin))? general.showValidInput(self.pinError,self.eMoneyPin):general.showInvalidInput(self.pinError,self.eMoneyPin);
-        }else{general.showEmptyInput(self.pinError,self.eMoneyPin)}
-         });
-        this.eMoneyPin.addEventListener('blur',function(e){
-        const pin=e.target.value;
-        if(pin === ''){
-        general.showEmptyInput(self.pinError,self.eMoneyPin,'blur')}
-        });
-        this.eMoneyNumber.addEventListener('keyup',function(e){
-            const num=e.target.value;
-        if(num !== ''){
-            (validate.validateEMoneyNumber(num))? general.showValidInput(self.eMoneyNumberError,self.eMoneyNumber):general.showInvalidInput(self.eMoneyNumberError,self.eMoneyNumber);
-        }else{general.showEmptyInput(self.pinError,self.eMoneyPin)}
-         });
-        this.eMoneyNumber.addEventListener('blur',function(e){
-        const num=e.target.value;
-        if(num === ''){
-        general.showEmptyInput(self.eMoneyNumberError,self.eMoneyNumber,'blur')}
+
+        this.elemArray.forEach((element,index) =>{
+            element.addEventListener('keyup',function(e){
+                const val=e.target.value;
+               if(val !== ''){
+                (self.checkValidation(e.target.id,e))? general.showValidInput(self.errorArray[index],element):general.showInvalidInput(self.errorArray[index],element);
+               }else{general.showEmptyInput(self.errorArray[index],element)}
+            });
         })
 
-}
+        this.elemArray.forEach((element,index)=> {
+             element.addEventListener('blur',function(e){
+                const val=e.target.value;
+                if(val === ''){
+                general.showEmptyInput(self.errorArray[index],element,'blur')}
+                })
+        });
+
+       }
+    
+       checkValidation(key,e){
+        let status;
+        const val=e.target.value;
+        switch(key){
+            case 'email': status=validate.validateMail(val);
+                           break;
+            case 'phone': status=validate.validatePhone(val);
+                break;      
+            case 'code': status=validate.validateCode(val);
+                break;  
+            case 'code': status=validate.validateCode(val);
+                break;   
+            case 'e-MoneyNumber': status=validate.validateEMoneyNumber(val);
+                break;  
+            case 'e-MoneyPIN': status=validate.validatePIN(val);
+                break;        
+        }
+        return status
+       }
+
 }
