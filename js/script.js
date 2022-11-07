@@ -57,12 +57,25 @@ if(page === 'checkout'){
    check.inputsEventlistener();  
    const cartItems=(localStorage.getItem('cartItems'))?JSON.parse(localStorage.getItem('cartItems')):[];
    const summaryProducts=document.querySelector('#summaryProducts');
+   const summaryCard=document.querySelector('#summaryCard');
+   const totalGrand=document.querySelector('#totalGrand');
+   let price=0;
+   const productsPrice = document.querySelector('#productsPrice')
    const displayedProducts=cartItems.filter(item => item!== '')
-   displayedProducts.forEach(product => {
-    summaryProducts.appendChild(check.createSummaryProduct(product));
-   });
-   console.log(summaryProducts);
+   if(displayedProducts.length !== 0){
+    displayedProducts.forEach(product => {
+        summaryProducts.appendChild(check.createSummaryProduct(product));
+        price+=Number(product.price.split(' ')[1]) * product.qty;
+       });
+       productsPrice.innerHTML=`$ ${price}`;
+       totalGrand.innerHTML=`$ ${price+50+1079}`;
+       summaryCard.classList.remove('d-none');
+   }
+   else{
+    summaryCard.classList.add('d-none');
 
+   }
+  
 }
 
 

@@ -23,12 +23,10 @@ export class Cart{
         const isEmpty=cartItems.filter(cartItem => cartItem !== '')
         if(isEmpty.length === 0){
             const empty=this.createEmptyCart();
-            // const cartHeading=this.createCartHeading(cartItems.length,'empty');
             const cartHeading=this.createCartHeading(0,'empty');
             cartDiv.appendChild(cartHeading);
             cartDiv.appendChild(empty);        
         }else{
-            // const cartHeading=this.createCartHeading(cartItems.length);
             const cartHeading=this.createCartHeading(isEmpty.length);
             cartDiv.appendChild(cartHeading);
             cartItems.forEach(cartItem => 

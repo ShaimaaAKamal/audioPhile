@@ -84,7 +84,7 @@
             </li>
           </ul>
         </div>
-        <svg width="23" height="20" xmlns="http://www.w3.org/2000/svg" class="me-3 me-lg-0 cartIcon">
+        <svg width="23" height="20" xmlns="http://www.w3.org/2000/svg" class="me-3 me-lg-0 cartIcon d-none">
           <path d="M8.625 15.833c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.054-.935-2.054-2.083 0-1.15.922-2.084 2.054-2.084zm9.857 0c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.053-.935-2.053-2.083 0-1.15.92-2.084 2.053-2.084zm-9.857 1.39a.69.69 0 00-.685.694.69.69 0 00.685.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zm9.857 0a.69.69 0 00-.684.694.69.69 0 00.684.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zM4.717 0c.316 0 .59.215.658.517l.481 2.122h16.47a.68.68 0 01.538.262c.127.166.168.38.11.579l-2.695 9.236a.672.672 0 01-.648.478H7.41a.667.667 0 00-.673.66c0 .364.303.66.674.66h12.219c.372 0 .674.295.674.66 0 .364-.302.66-.674.66H7.412c-1.115 0-2.021-.889-2.021-1.98 0-.812.502-1.511 1.218-1.816L4.176 1.32H.674A.667.667 0 010 .66C0 .296.302 0 .674 0zm16.716 3.958H6.156l1.797 7.917h11.17l2.31-7.917z" fill="#FFF" fill-rule="nonzero"/>
         </svg>
        </div>
@@ -225,45 +225,17 @@
           </div>
       </div>
      <div class="col-lg-4">
-      <section> 
+      <section id="summaryCard" class="d-none"> 
         <div class="bg-white p-4 rounded-2">
             <h6 class="text-uppercase mb-4">summary</h6>
             <div id="summaryProducts">
-              <!-- <div class="d-flex justify-content-between align-items-center mb-4">
-                <div class='d-flex align-items-center'>
-                   <img src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="image" class="rounded-3 me-3 w25">
-                   <div class="d-flex flex-column ">
-                        <span class=" fb text-black  mb-1">XX99 MK II</span>
-                        <span class="text-black-50 fw-semibold small">$ 2,900</span>
-                   </div>
-                </div>
-                <span class="text-black-50">x1</span>
-             </div>
-             <div class="d-flex justify-content-between align-items-center mb-4">
-               <div class='d-flex align-items-center'>
-                  <img src="./assets/cart/image-xx99-mark-one-headphones.jpg" alt="image" class="rounded-3 me-3 w25">
-                  <div class="d-flex flex-column ">
-                       <span class=" fb text-black  mb-1">XX99 MK I</span>
-                       <span class="text-black-50 fw-semibold small">$ 899</span>
-                  </div>
-               </div>
-               <span class="text-black-50">x2</span>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mb-4">
-             <div class='d-flex align-items-center'>
-                <img src="./assets/cart/image-xx59-headphones.jpg" alt="image" class="rounded-3 me-3 w25">
-                <div class="d-flex flex-column ">
-                     <span class=" fb text-black  mb-1">XX59</span>
-                     <span class="text-black-50 small fw-semibold">$ 899</span>
-                </div>
-             </div>
-             <span class="text-black-50">x1</span>
-            </div> -->
             </div>
          
        <div class="d-flex justify-content-between mt-4">
           <p class="text-black-50 mb-0 small">TOTAL</p>
-          <h6>$ 5,900</h6>
+          <!-- <h6 id="productsPrice">$ 5,900</h6> -->
+          <h6 id="productsPrice"></h6>
+
        </div>
        <div class="d-flex justify-content-between ">
         <p class="text-black-50 mb-0 small">SHIPPING</p>
@@ -275,7 +247,7 @@
         </div>
         <div class="d-flex justify-content-between mt-2 mb-3">
           <p class="text-black-50 mb-0 small">GRAND TOTAL</p>
-          <h6 class="text-site">$ 5,446</h6>
+          <h6 class="text-site" id="totalGrand">$ 5,446</h6>
           </div>
        <a class="py-2 px-4 border-0 mainBtn text-center w-100 d-inline-block text-decoration-none " href="#">CONTINUE & PAY</a>       
         </div>
