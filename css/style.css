@@ -251,7 +251,9 @@
     padding:.7rem 2.8rem;
     border-radius: .5rem;
 }
-
+.form-check:hover{
+   border-color: var(--lightMain) !important;
+}
 .form-check-input:checked {
     background-color: var(--mainColor);
     border-color:var(--mainColor);
