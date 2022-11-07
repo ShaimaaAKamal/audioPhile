@@ -232,10 +232,11 @@
 }
 
 .form-control:focus{
-    border-color: var(--mainColor);
-    box-shadow: unset;
-    caret-color: var(--mainColor);
+    border-color: var(--lightMain) ;
+    box-shadow: unset  ;
+    caret-color: var(--mainColor) ;
 }
+
 .form-control{
     padding-bottom: 13px;
 }

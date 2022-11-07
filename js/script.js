@@ -1,5 +1,6 @@
 import { Cart } from "./modules/cartModule.js";
 import { General } from "./modules/generalModule.js";
+import { Checkout } from "./modules/checkoutModule.js";
 const cartClass=new Cart();
 const general=new General();
 const page=localStorage.getItem('page');
@@ -50,6 +51,12 @@ if(page === 'product'){
     plus.addEventListener('click',(e)=> general.increaseQuantity(e,qty));
     minus.addEventListener('click',(e)=> general.decreaseQuantity(e,qty));
 }
+
+if(page === 'checkout'){
+   const check=new Checkout();
+   check.inputsEventlistener();  
+}
+
 
 
 
