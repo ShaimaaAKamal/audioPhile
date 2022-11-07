@@ -58,6 +58,7 @@ if(page === 'checkout'){
    const cartItems=(localStorage.getItem('cartItems'))?JSON.parse(localStorage.getItem('cartItems')):[];
    const summaryProducts=document.querySelector('#summaryProducts');
    const summaryCard=document.querySelector('#summaryCard');
+   const vat=document.querySelector('#vat');
    const totalGrand=document.querySelector('#totalGrand');
    let price=0;
    const productsPrice = document.querySelector('#productsPrice')
@@ -68,7 +69,8 @@ if(page === 'checkout'){
         price+=Number(product.price.split(' ')[1]) * product.qty;
        });
        productsPrice.innerHTML=`$ ${price}`;
-       totalGrand.innerHTML=`$ ${price+50+1079}`;
+       vat.innerHTML=`$ ${Math.round(.05*price)}`
+       totalGrand.innerHTML=`$ ${price+50+ (Math.round(.05*price))}`;
        summaryCard.classList.remove('d-none');
    }
    else{
