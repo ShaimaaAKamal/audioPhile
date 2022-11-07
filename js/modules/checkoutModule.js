@@ -26,9 +26,6 @@ export class Checkout{
         this.formcheck=document.querySelectorAll('.form-check');
         this.cashInfo=document.querySelector('#cashInfo');
         this.eMoneyInfo=document.querySelector('#eMoneyInfo');
-        console.log(this.cashInfo);
-        console.log( this.eMoneyInfo);
-
       }   
 
       inputsEventlistener(){
