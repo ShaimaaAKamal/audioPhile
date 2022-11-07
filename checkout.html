@@ -142,7 +142,10 @@
               </div>
               <div class="col-md-6">
                 <div>
-                  <label for="code" class="form-label fw-semibold small">ZIP Code</label>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <label for="code" class="form-label fw-semibold small">ZIP Code</label>
+                    <small class="text-danger small d-none form-label" id="codeError">Invalid Code</small>
+                   </div>
                   <input type="text" class="form-control form-control-lg" id="code" placeholder="10001">
                 </div>
                </div>

@@ -8,4 +8,9 @@ export class Validation{
         const regex=/^(\+2)?01(0|1|2|5)[0-9]{8}$/
         return regex.test(phone);
     }
+
+    validateCode(code){
+        const regex=/^[0-9]{5}$/
+        return regex.test(code); 
+    }
 }

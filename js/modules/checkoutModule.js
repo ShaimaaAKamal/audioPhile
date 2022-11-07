@@ -17,6 +17,7 @@ export class Checkout{
         this.eMoneyPin=document.querySelector('#e-Money PIN');
         this.emailError=document.querySelector('#mailError');
         this.phoneError=document.querySelector('#phoneError');
+        this.codeError=document.querySelector('#codeError');
       }   
 
       inputsEventlistener(){
@@ -42,6 +43,17 @@ export class Checkout{
         const phone=e.target.value;
         if(phone === ''){
         general.showEmptyInput(self.phoneError,self.phone,'blur')}
+        })
+        this.code.addEventListener('keyup',function(e){
+            const code=e.target.value;
+        if(code !== ''){
+            (validate.validateCode(code))? general.showValidInput(self.codeError,self.code):general.showInvalidInput(self.codeError,self.code);
+        }else{general.showEmptyInput(self.codeError,self.code)}
+         });
+        this.code.addEventListener('blur',function(e){
+        const code=e.target.value;
+        if(code === ''){
+        general.showEmptyInput(self.codeError,self.code,'blur')}
         })
 }
 }
