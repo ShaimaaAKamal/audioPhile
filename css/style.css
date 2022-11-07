@@ -228,10 +228,10 @@
 }
 
 .form-control::placeholder{
-    font-size: 1rem;
+    font-size: .8rem;
 }
 
-.form-control:focus{
+.form-control:focus,.form-check:focus{
     border-color: var(--lightMain) ;
     box-shadow: unset  ;
     caret-color: var(--mainColor) ;
