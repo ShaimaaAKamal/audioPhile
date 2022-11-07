@@ -13,4 +13,14 @@ export class Validation{
         const regex=/^[0-9]{5}$/
         return regex.test(code); 
     }
+
+    validatePIN(pin){
+        const regex=/^[0-9]{4}$/
+        return regex.test(pin); 
+    }
+
+    validateEMoneyNumber(num){
+        const regex=/^[0-9]{16}$/
+        return regex.test(num); 
+    }
 }

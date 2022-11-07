@@ -193,14 +193,20 @@
               </div>
               <div class="col-md-6">
                 <div>
-                  <label for="e-Money Number" class="form-label fw-semibold small">e-Money Number</label>
-                  <input type="text" class="form-control form-control-lg" id="e-Money Number" placeholder="238521993">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <label for="e-MoneyNumber" class="form-label fw-semibold small">e-Money Number</label>
+                     <small class="text-danger small d-none form-label" id="eMoneyNumberError">Invalid Number</small>
+                    </div>
+                  <input type="text" class="form-control form-control-lg" id="e-MoneyNumber" placeholder="238521993">
                 </div>
                </div>
                <div class="col-md-6">
                 <div>
-                  <label for="e-Money PIN" class="form-label fw-semibold small">e-Money PIN</label>
-                  <input type="text" class="form-control form-control-lg" id="e-Money PIN" placeholder="6891">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <label for="e-MoneyPIN" class="form-label fw-semibold small">e-Money PIN</label>
+                     <small class="text-danger small d-none form-label" id="pinError">Invalid PIN</small>
+                    </div>
+                  <input type="text" class="form-control form-control-lg" id="e-MoneyPIN" placeholder="6891">
                 </div>
                </div>
             </div>

@@ -231,7 +231,7 @@
     font-size: .8rem;
 }
 
-.form-control:focus,.form-check:focus{
+.form-control:focus{
     border-color: var(--lightMain) ;
     box-shadow: unset  ;
     caret-color: var(--mainColor) ;
@@ -239,6 +239,7 @@
 
 .form-control{
     padding-bottom: 13px;
+    font-size: .9rem;
 }
 
 

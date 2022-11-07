@@ -13,11 +13,13 @@ export class Checkout{
         this.country=document.querySelector('#country');
         this.cash=document.querySelector('#cash');
         this.eMoney=document.querySelector('#e-Money');
-        this.eMoneyNumber=document.querySelector('#e-Money Number');
-        this.eMoneyPin=document.querySelector('#e-Money PIN');
+        this.eMoneyNumber=document.querySelector('#e-MoneyNumber');
+        this.eMoneyPin=document.querySelector('#e-MoneyPIN');
         this.emailError=document.querySelector('#mailError');
         this.phoneError=document.querySelector('#phoneError');
         this.codeError=document.querySelector('#codeError');
+        this.pinError=document.querySelector('#pinError');
+        this.eMoneyNumberError=document.querySelector('#eMoneyNumberError');
       }   
 
       inputsEventlistener(){
@@ -55,5 +57,28 @@ export class Checkout{
         if(code === ''){
         general.showEmptyInput(self.codeError,self.code,'blur')}
         })
+        this.eMoneyPin.addEventListener('keyup',function(e){
+            const pin=e.target.value;
+        if(pin !== ''){
+            (validate.validatePIN(pin))? general.showValidInput(self.pinError,self.eMoneyPin):general.showInvalidInput(self.pinError,self.eMoneyPin);
+        }else{general.showEmptyInput(self.pinError,self.eMoneyPin)}
+         });
+        this.eMoneyPin.addEventListener('blur',function(e){
+        const pin=e.target.value;
+        if(pin === ''){
+        general.showEmptyInput(self.pinError,self.eMoneyPin,'blur')}
+        });
+        this.eMoneyNumber.addEventListener('keyup',function(e){
+            const num=e.target.value;
+        if(num !== ''){
+            (validate.validateEMoneyNumber(num))? general.showValidInput(self.eMoneyNumberError,self.eMoneyNumber):general.showInvalidInput(self.eMoneyNumberError,self.eMoneyNumber);
+        }else{general.showEmptyInput(self.pinError,self.eMoneyPin)}
+         });
+        this.eMoneyNumber.addEventListener('blur',function(e){
+        const num=e.target.value;
+        if(num === ''){
+        general.showEmptyInput(self.eMoneyNumberError,self.eMoneyNumber,'blur')}
+        })
+
 }
 }
