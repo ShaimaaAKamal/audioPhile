@@ -111,6 +111,16 @@
     z-index:9999;
 }
 
+#navbarSupportedContent{
+   z-index:2;
+   height: 100vh;
+   overflow: auto;
+   outline:none !important;
+}
+
+#navbarSupportedContent::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
 
 .parent{
     width:95%;
@@ -275,6 +285,9 @@
     .Home{
         background-image: url('../assets/home/tablet/image-header.jpg');
     }
+    #navbarSupportedContent{
+        height: auto;     
+     }
 
     .imgLarge,.imgSmall{
         display:none;
@@ -315,6 +328,15 @@
         margin:0;
     }
 
+    .navbar-expand-lg  #navbarSupportedContent {
+        display: none !important;
+    }
+
+    /* #navbarSupportedContent{
+        background-color: #1A1A1A;
+    } */
+    
+    
     .imgMedium,.imgSmall{
         display:none;
     }

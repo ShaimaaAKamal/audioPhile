@@ -6,7 +6,19 @@ const general=new General();
 const page=localStorage.getItem('page');
 const cartIcon=document.querySelector('.cartIcon');
 const cart=document.querySelector('.cart');
+const navbarToggler=document.querySelector('.navbar-toggler')
+let eventCount=0;
 
+navbarToggler.addEventListener('click',function(e){
+    eventCount++;
+    const navSection=document.querySelector('.navSection');
+    const navbarSupportedContent=document.querySelector('#navbarSupportedContent');
+    navbarSupportedContent.style.top=`${navSection.clientHeight + 48}px`;
+    if(!navbarToggler.classList.contains('collapsed') || eventCount==1)
+    {   navbarSupportedContent.tabIndex=-1;
+        navbarSupportedContent.focus();
+   }
+})
 cart.addEventListener('click',function(e){
     const id=e.target.id
     if(id !== 'minus' && id !== 'plus' && id !== 'check' && id !== 'remove' && id !== 'delete' )
