@@ -134,7 +134,7 @@
 }
 
 .logo{
-    width:75%;
+    width:auto;
 }
 .badgeIcon{
     left:-5px;
@@ -277,6 +277,11 @@
 }
 
 
+@media screen  and (min-width:567px){
+    .logo{
+        width:68%;
+    }
+}
 @media screen and (min-width:768px){
     .parent{
         width:80%;
