@@ -1,13 +1,15 @@
 import { Cart } from "./modules/cartModule.js";
 import { General } from "./modules/generalModule.js";
 import { Checkout } from "./modules/checkoutModule.js";
-// localStorage.setItem('check',false);
 const cartClass=new Cart();
 const general=new General();
 const page=localStorage.getItem('page');
 const cartIcon=document.querySelector('.cartIcon');
 const cart=document.querySelector('.cart');
-const navbarToggler=document.querySelector('.navbar-toggler')
+const navbarToggler=document.querySelector('.navbar-toggler');
+general.updateBadge();
+
+
 let eventCount=0;
 
 navbarToggler.addEventListener('click',function(e){
@@ -53,8 +55,8 @@ if(page === 'product'){
             const  olderProductId=checkItemExists[0].id;
             cartItems[olderProductId].qty=Number(qty);
         }
-    
-            localStorage.setItem('cartItems',JSON.stringify(cartItems));
+        localStorage.setItem('cartItems',JSON.stringify(cartItems));
+        general.updateBadge();
     });
     const plus=document.querySelector('#plus');
     const minus=document.querySelector('#minus');

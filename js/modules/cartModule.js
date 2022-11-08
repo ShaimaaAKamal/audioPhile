@@ -54,6 +54,7 @@ export class Cart{
         a.addEventListener('click',function(e){
             e.preventDefault();
             localStorage.setItem('cartItems',JSON.stringify([]));
+            general.updateBadge();
             cart.innerHTML=''
             cart.appendChild(self.createCart());
         })
@@ -79,10 +80,8 @@ export class Cart{
             div.appendChild(img);
             const info=this.createCartItemInfo(cartItem);
             div.appendChild(info);
-            // const qty=this.createCartItemQty(cartItem,cartItems);
             const options=this.cartOptions(cartItem,cartItems);
             parentDiv.appendChild(div);
-            // parentDiv.appendChild(qty);
             parentDiv.appendChild(options);
             return parentDiv;
     }
@@ -97,6 +96,7 @@ export class Cart{
         deleteIcon.addEventListener('click',function(){
             cartItems.splice(cartItem.id,1,'');
             localStorage.setItem('cartItems',JSON.stringify(cartItems));
+            general.updateBadge();
             cart.innerHTML='';
             cart.appendChild(self.createCart());
             cart.classList.remove('d-none');

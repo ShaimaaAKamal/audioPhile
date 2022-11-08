@@ -39,4 +39,11 @@ export class General{
      window.history.go(-1);
     })
    }
+
+   updateBadge(){
+    const badgeIcon=document.querySelector('.badgeIcon');
+    const cartItems=(localStorage.getItem('cartItems'))?JSON.parse(localStorage.getItem('cartItems')):[];
+    const displayedProduct=cartItems.filter(cartItem =>  cartItem !== '')
+    badgeIcon.innerHTML=`${displayedProduct.length}`;
+   }
 }

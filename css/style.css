@@ -137,6 +137,13 @@
 .logo{
     width:68%;
 }
+.badgeIcon{
+    left:-5px;
+    font-size: .5rem;
+    background-color: #fff;
+    color:var(--mainColor);
+    top:-10px
+}
 .cartIcon{
     position: fixed;
     right:2.5%;
@@ -285,6 +292,7 @@
     .Home{
         background-image: url('../assets/home/tablet/image-header.jpg');
     }
+
     #navbarSupportedContent{
         height: auto;     
      }
@@ -320,6 +328,10 @@
     }
     .Home{
         background-image: url('../assets/home/desktop/image-hero.jpg');
+    }
+
+    .badgeIcon{
+        left:-16px;
     }
 
     .homeCaption{
