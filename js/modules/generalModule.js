@@ -31,4 +31,12 @@ export class General{
     mainELement.style.borderColor= (event === 'blur')?'#CED4DA':'#fbaf85';
     mainELement.previousElementSibling.children[0].style.color='#212529';
    }
+
+   goBack(){
+    const goBack=document.querySelector('#goBack');
+    goBack.addEventListener('click',function(e){
+     e.preventDefault();
+     window.history.go(-1);
+    })
+   }
 }

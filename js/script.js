@@ -63,17 +63,15 @@ if(page === 'product'){
 
     plus.addEventListener('click',(e)=> general.increaseQuantity(e,qty));
     minus.addEventListener('click',(e)=> general.decreaseQuantity(e,qty));
+
+    general.goBack();
 }
 
 if(page === 'checkout'){
     const check=new Checkout();
    check.inputsEventlistener();  
    check.displaySummary();
-   const goBack=document.querySelector('#goBack');
-   goBack.addEventListener('click',function(e){
-    e.preventDefault();
-    window.history.go(-1);
-   })
+   general.goBack();
 }
 
 
