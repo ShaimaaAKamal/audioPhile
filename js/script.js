@@ -69,6 +69,11 @@ if(page === 'checkout'){
     const check=new Checkout();
    check.inputsEventlistener();  
    check.displaySummary();
+   const goBack=document.querySelector('#goBack');
+   goBack.addEventListener('click',function(e){
+    e.preventDefault();
+    window.history.go(-1);
+   })
 }
 
 
