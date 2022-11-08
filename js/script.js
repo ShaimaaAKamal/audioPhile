@@ -1,6 +1,7 @@
 import { Cart } from "./modules/cartModule.js";
 import { General } from "./modules/generalModule.js";
 import { Checkout } from "./modules/checkoutModule.js";
+// localStorage.setItem('check',false);
 const cartClass=new Cart();
 const general=new General();
 const page=localStorage.getItem('page');

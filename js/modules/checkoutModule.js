@@ -114,6 +114,8 @@ export class Checkout{
         others.innerHTML=`and ${displayedProducts.length -1} other item(s)`;
         sucessOrder.classList.remove('d-none')
         successGrand.innerHTML=`$ ${price+50+ (Math.round(.05*price))}`;
+        localStorage.setItem('SuccessOrder',JSON.stringify(true));
+        localStorage.setItem('cartItems',JSON.stringify([]));
        }
 
        displaySummary(){
@@ -136,7 +138,7 @@ export class Checkout{
             totalGrand.innerHTML=`$ ${price+50+ (Math.round(.05*price))}`;
             summaryCard.classList.remove('d-none');
             pay.addEventListener('click',(e)=>this.payHandle(e,displayedProducts,price));
-            localStorage.setItem('cartItems',JSON.stringify([]))
+            // localStorage.setItem('cartItems',JSON.stringify([]))
         }
         else{
          summaryCard.classList.add('d-none');

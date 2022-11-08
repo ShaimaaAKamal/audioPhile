@@ -11,6 +11,10 @@
   <title>Audiophile e-commerce website</title>
   <script>
       localStorage.setItem('page','checkout');
+      const check=(localStorage.getItem('check'))?JSON.parse(localStorage.getItem('check')):false;
+      const SuccessOrder=(localStorage.getItem('SuccessOrder'))?JSON.parse(localStorage.getItem('SuccessOrder')):false;
+      if(performance.navigation.type ===1 && !SuccessOrder)  check=true;
+      if(!check) window.location.replace("index.html");
   </script>
 </head>
 
@@ -376,5 +380,10 @@
   </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js" type="module"></script>
+<script>
+  window.addEventListener('beforeunload',function(){
+      localStorage.setItem('check',JSON.stringify(false));
+  })
+</script>
 </body>
 </html>

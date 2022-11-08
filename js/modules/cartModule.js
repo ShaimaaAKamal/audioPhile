@@ -33,6 +33,9 @@ export class Cart{
              (cartItem)? cartDiv.appendChild(this.createCartItem(cartItem,cartItems)):'')
            const checkout=this.createElem('a',[{key:'class',value:"py-2 px-4 border-0 mainBtn text-center w-100 d-inline-block text-decoration-none"},{key:'href',value:'checkout.html'},,{key:'id',value:'check'}]);
            checkout.innerHTML=`CHECKOUT`;
+           checkout.addEventListener('click',function(){
+             localStorage.setItem('check',JSON.stringify(true));
+           })
            cartDiv.appendChild(checkout);
         }
     return cartDiv;
